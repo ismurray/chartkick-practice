@@ -1,1 +1,27 @@
 <h1>Statistics</h1>
+
+<%= bar_chart @sporters.group(:age).count %>
+
+<%= pie_chart({"Football" => 10, "Basketball" => 5}) %>
+<%= pie_chart [["Football", 10], ["Basketball", 5]] %>
+
+<%= timeline [
+  ["Washington", "1789-04-29", "1797-03-03"],
+  ["Adams", "1797-03-03", "1801-03-03"],
+  ["Jefferson", "1801-03-03", "1809-03-03"]
+] %>
+
+<%= geo_chart Sporter.group(:country).count.map { |country, count| [country.name, count] } %>
+
+<%= scatter_chart [[8, 37], [4, 19.5], [11, 52], [4, 22], [3, 16.5], [6.5, 32.8], [14, 72]], legend: true, xtitle: 'Diameter', ytitle: 'Age', library:
+  {
+    chartArea: { width:'50%' },
+    trendlines: {
+      0 => {
+        type: 'linear',
+        showR2: true,
+        visibleInLegend: true
+      }
+    }
+  }
+%>
