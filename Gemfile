@@ -15,6 +15,8 @@ gem 'coffee-rails', '~> 4.1.0'
 
 gem 'puma'
 gem 'chartkick'
+gem 'countries'
+gem 'faker'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
